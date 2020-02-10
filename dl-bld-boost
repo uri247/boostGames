@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+version=1.72.0
+folder=boost_$(echo ${version} | sed "s/\./_/g")
+boost_url=https://dl.bintray.com/boostorg/release/${version}/source/${folder}.tar.gz
+
+# cd to src folder
+cd -P ~/src
+
+# download, unzip, and extract
+curl --location --silent ${boost_url} | gunzip | tar --extract
+cd ${folder}
+
+# configure
+./bootstrap.sh --with-python=/usr/bin/python3.8 --prefix=$HOME/.local --with-libraries=date_time,chrono,thread,log
+
+# build
+./b2
+
+# install
+./b2 install
