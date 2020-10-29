@@ -6,7 +6,7 @@
 Ubuntu has boost library in repository. However, may be outdated. Ubuntu 18.04 has version 65 (missing beast). Install
 specific libraries (In this example: thread, and date_time) with the following command:
 
-    $ apt install libboost-thrad-dev libboost-datetime-dev
+    $ apt install libboost-thrad-dev libboost-datetime-dev libboost-log-dev
     
 ```libboost-all-dev``` is also available. That will put libs and includes in /usr/lib and /usr/include
 
